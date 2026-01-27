@@ -28,16 +28,23 @@ struct ContentView: View {
             Spacer()
             
             Button("Press me!") {
+//                let message1 = "You Are Awesome!"
+//                let message2 = "You Are Great!"
+//                
+//                if message == message1 {
+//                    message = message2
+//                    imageString = "hand.thumbsup"
+//                } else {
+//                    imageString = "sun.max.fill"
+//                    message = message1
+//                }
+                
                 let message1 = "You Are Awesome!"
                 let message2 = "You Are Great!"
-                
-                if message == message1 {
-                    message = message2
-                    imageString = "hand.thumbsup"
-                } else {
-                    imageString = "sun.max.fill"
-                    message = message1
-                }
+                let imageString1 = "sun.max.fill"
+                let imageString2 = "hand.thumbsup"
+                message = (message == message1 ? message2 : message1)
+                imageString = (imageString == imageString1 ? imageString2 : imageString1)
             }
             .buttonStyle(.borderedProminent)
             .font(.title2)
