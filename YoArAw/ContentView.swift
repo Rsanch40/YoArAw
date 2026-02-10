@@ -17,27 +17,33 @@ struct ContentView: View {
     var body: some View {
         
         VStack {
-            Spacer()
+          
+            Text(message)
+                .font(.largeTitle)
+                .fontWeight(.heavy)
+                .foregroundStyle(.red)
+                .multilineTextAlignment(.center)
+                .minimumScaleFactor(0.5)  // shorten font to fit (ex: up to 50%)
+                .frame(height: 100) // restrict text to this specified frame
+                .animation(.easeInOut(duration: 0.15), value: message)
             
             Image(imageName)
                 .resizable()
                 .scaledToFit()
                 .clipShape(RoundedRectangle(cornerRadius: 30))
                 .shadow(radius: 30)
+                .animation(.default, value: imageName)  // play (default) animation when (imageName) changes
             
-            Text(message)
-                .font(.largeTitle)
-                .fontWeight(.heavy)
-                .foregroundStyle(.red)
-                .multilineTextAlignment(.center)
             
             Spacer()
             
             Button("Show Message") {
                 let messages = ["You Are Awesome!",
+                                "When the Genius Bar needs help, they call you!",
                                 "You Are Great!",
                                 "Nice Job!",
-                                "Fabulous!"]
+                                "Fabulous!"
+                                ]
                 
 
                 imageName = "image\(imageNumber)"
