@@ -45,20 +45,8 @@ struct ContentView: View {
                                 "Fabulous!"
                                 ]
                 
-
-                imageName = "image\(imageNumber)"
-                imageNumber += 1
-                
-                if imageNumber > 9 {
-                    imageNumber = 0
-                }
-                
-                if imageCounter == messages.count {
-                    imageCounter = 0
-                }
-
-                message = messages[imageCounter]
-                imageCounter += 1
+                imageName = "image\(Int.random(in: 0...9))"
+                message = messages[Int.random(in: 0...messages.count-1)]
                 
                 
             }
